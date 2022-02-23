@@ -20,7 +20,7 @@ export class BookComponent implements OnInit {
   // objects
 
   livreId: number = 0;
-  similaire: boolean = true;
+  similaire: boolean = false;
   auteur: Auteur = {
     nom : '',
     birth: null,
@@ -49,7 +49,7 @@ export class BookComponent implements OnInit {
     download: 0
   };
 
-  livres = [1,2,3];
+  livres:any[] = [];
   
   constructor(private route: ActivatedRoute,private bookService: BookServiceService) {
     this.route.params.subscribe(params => {
@@ -92,7 +92,13 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showText(){
+    this.similaire = true;
+    this.livres = [1,2,3];
+  }
+
 }
+
 type Book = {
   titre: string
   auteurs: Auteur[],

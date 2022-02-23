@@ -12,8 +12,8 @@ export class BookServiceService {
 
   constructor(private http: HttpClient) { }
 
-  all_books(limit?:number|50, topic?:string|'', language?:string|''){
-    return this.http.get<object[]>(`${this.urlApi}books/?limit=${limit}&topic=${topic}&language=${language}`)
+  all_books(limit?:number|50, topic?:string|'', language?:string|'',search?:string|''){
+    return this.http.get<object[]>(`${this.urlApi}books/?limit=${limit}&topic=${topic}&language=${language}&search=${search}`)
   }
 
   search_book(id: number): Observable<object[]> {

@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   nom: string = "";
   language: string = "fr";
   topics = ["Humorous stories", "Dogs -- Fiction"]
+  motRecherche: string = "";
   languages = [{name: "Francais", lang: 'fr'}, {name: "Anglais", lang:"en"}]
 
   constructor(private bookService: BookServiceService) { 
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
   search() {
     console.log(this.nom, this.language, this.topic);
 
-    this.bookService.all_books(10, this.topic, this.language).subscribe(
+    this.bookService.all_books(10, this.topic, this.language,this.motRecherche).subscribe(
       (data:any[]) => {
         const livres = data;
         let newLivres: any[] = [];
