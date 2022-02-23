@@ -1,0 +1,48 @@
+.backgroung {
+    background-color: #fafcfd;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-image {
+    background-image: url("/assets/home/bibliotheque1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px 300px 150px 300px;
+}
+
+.livres {
+    padding-top: 50px;
+}
+
+.livre {
+    display: inline-grid;
+    margin: 0px 10px 10px 0px;
+}
+
+.text-muted{
+    padding-top: 20px;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 23px;
+    overflow: visible;
+    vertical-align: -0.125em;
+    padding-right: 13px;
+}
+
+// @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+// @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+// @media (min-width:801px)  { 
+    
+//  }
+
+
+

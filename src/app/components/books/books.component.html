@@ -1,0 +1,55 @@
+<!-- Research menu -->
+
+<div class="container-fluid">
+
+    <div class="form-group row" style="background-color: rgb(201, 201, 192);">
+        <div id="advanced" style="display: block ; margin-top: 20px;">
+            <div>
+                <div class="form-group row">
+                    <div class="col-md-6 col-sm-12 mb-3">
+                        <input [(ngModel)]="nom" type="text" class="form-control input-lg" id="inputName" placeholder="Nom du livre">
+                        <div class="valid-feedback">Ok !</div>
+                        <div class="invalid-feedback">Valeur incorrecte</div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 mb-3">
+                        <select [(ngModel)]="topic" id="inputTheme" class="form-control input-lg">
+                            <option *ngFor="let topic of topics" [value]="topic">{{topic}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 col-sm-12 mb-3">
+                        <select [(ngModel)]="language" id="inputLanguage" class="form-control input-lg">
+                            <option *ngFor="let language of languages" [value]="language.lang">{{language.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 col-sm-12 mb-3">
+                        <input [(ngModel)]="motRecherche" type="text" class="form-control input-lg" id="inputName" placeholder="Recherche par mot">
+                        <div class="valid-feedback">Ok !</div>
+                        <div class="invalid-feedback">Valeur incorrecte</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <button class="btn btn-dark" (click)="search()" type="submit">Envoyer</button>
+</div>
+
+
+<!--Book list-->
+<div class="container livre">
+    <div class="row">
+        <div class="col-lg-4 d-flex align-items-stretch" *ngFor="let livre of livres">
+            <div class="card flex-row flex-wrap mb-3 mx-auto mt-3 col-sm-12 d-flex flex-column ">
+                <div class="card-header border-0">
+                    <img class="img-fluid" alt="100%x280" [src]="livre.formats['image/jpeg']">
+                </div>
+                <div class="card-block px-2">
+                    <h4 class="card-title">{{livre.title}}</h4>
+                    
+                </div>
+                <div class="w-100"></div>
+                <div class="card-footer  mt-auto w-100 text-muted">
+                    <a href="#" class="btn btn-dark mt-auto" [routerLink]="'/book/' + livre.id">Voir le livre</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
